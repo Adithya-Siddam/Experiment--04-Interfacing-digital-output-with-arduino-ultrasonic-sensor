@@ -54,18 +54,39 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 10.	Plot the graph for the output voltage vs the resistance 
 
 
-### PROGRAM 
+### PROGRAM :
+Developed by S Adithya Chowdary.
 
-### Distance vs measurement table 
+ref. No: 212221230100.
+~~~
 
+#define echoPin 9
+#define trigPin 10
+long duration;
+int distance;
+void setup(){
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+}
+void loop(){
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration * 0.034/2;
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+}
+~~~
+### OUTPUT:
+![OUTPUT](aud1.png)
+![OUTPUT](aud2.png)
 
+### RESULTS:
+Thus, Distance measurement using Ultrasonic sensor is completed using ardunio board and thinkercad software successfully.
 
-
-
-
-
-
-### RESULTS
 
 
 
