@@ -1,7 +1,7 @@
 # EXPERIMENT-NO--04-Distance measurement using Ultrasonic sensor
 
 ## AIM: 
-To interface the ultrasonic sensor to measure the distance of an object. 
+To measure the distance of the given object using ultrasonic sensor(HC - SR04).
  
 ### COMPONENTS REQUIRED:
 1.	ultrasonic sensor module HC-SR04
@@ -85,7 +85,7 @@ void loop(){
 ![OUTPUT](aud2.png)
 
 ### RESULTS:
-Thus, Distance measurement using Ultrasonic sensor is completed using ardunio board and thinkercad software successfully.
+Thus, Distance value is measured in "CM" using ultrasonic sensor.
 
 
 
