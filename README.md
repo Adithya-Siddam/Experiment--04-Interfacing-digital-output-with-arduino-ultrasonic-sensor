@@ -1,7 +1,7 @@
-# EXPERIMENT-NO--04-Distance measurement using Ultrasonic sensor
+# EXPERIMENT-NO--05-Distance measurement using Ultrasonic sensor
 
 ## AIM: 
-To measure the distance of the given object using ultrasonic sensor(HC - SR04).
+To interface an ultrasonic pair and measure the distance in centimeters , calculate the error
  
 ### COMPONENTS REQUIRED:
 1.	ultrasonic sensor module HC-SR04
@@ -34,9 +34,7 @@ The time between the transmission and reception of the signal allows us to calcu
 distance to an object = ((speed of sound in the air)*time)/2
 speed of sound in the air at 20ºC (68ºF) = 343m/s
 
-### FIGURE 01 CIRCUIT OF INTERFACING ULTRASONIC SENSOR 
-
-
+### FIGURE 01 CIRCUIT OF INTERFACING ULTRASONIC SENSOR :
 ![image](https://user-images.githubusercontent.com/36288975/166430594-5adb4ca9-5a42-4781-a7e6-7236b3766a85.png)
 
 
@@ -54,39 +52,60 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 10.	Plot the graph for the output voltage vs the resistance 
 
 
-### PROGRAM :
-Developed by S Adithya Chowdary.
-
-ref. No: 212221230100.
+### PROGRAM 
 ~~~
+Name : S Adithya Chowdary.
+Ref no : 212221230100.
 
-#define echoPin 9
-#define trigPin 10
+// C++ code
+//
+#define trigpin 2
+#define echopin 3
 long duration;
 int distance;
-void setup(){
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
+void setup()
+{
+  pinMode(trigpin,OUTPUT);
+  pinMode(echopin,INPUT);
   Serial.begin(9600);
 }
-void loop(){
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(2);
-  digitalWrite(trigPin, LOW);
-  duration = pulseIn(echoPin, HIGH);
-  distance = duration * 0.034/2;
-  Serial.print("Distance: ");
+
+void loop()
+{
+  digitalWrite(trigpin,LOW);
+  delay(20);
+  digitalWrite(trigpin,HIGH);
+  delay(20);
+  digitalWrite(trigpin,LOW);
+  //delay(20);
+  duration=pulseIn(echopin,HIGH);
+  distance=duration*0.034/2;
+  Serial.print("distance = ");
   Serial.print(distance);
-  Serial.println(" cm");
+  Serial.println("CM");
+  delay(500);
+  
+  
 }
 ~~~
+
+### Distance vs measurement table: 
+![333333333333333](https://user-images.githubusercontent.com/93427201/190164173-a947a6dd-832c-4c1a-979a-f1acc43382e2.png)
+
+			
+### average error = sum/ number of readings:
+
+Average Error=0.5+0.7+0.4+0.8+1.0=3.4/5=0.68
+
+
 ### OUTPUT:
-![OUTPUT](aud1.png)
-![OUTPUT](aud2.png)
+![i](https://user-images.githubusercontent.com/93427201/190161705-0d25256e-3c4c-47ff-b991-3f4f7e4e619a.png)
+### serial monitor:
+![WhatsApp Image 2022-09-14 at 6 38 56 PM](https://user-images.githubusercontent.com/93427201/190162652-ecba38c0-2782-4d29-94b1-b5b8213cb681.jpeg)
 
-### RESULTS:
-Thus, Distance value is measured in "CM" using ultrasonic sensor.
 
+### RESULT:
+Thus,the distance value is measured in "CM" using ultrasonic sensor.
 
 
 
